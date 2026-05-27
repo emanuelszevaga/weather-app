@@ -6,7 +6,15 @@ const connectDB = require('./config/db')
 dotenv.config()
 
 const app = express()
-app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:5174'] }))
+
+app.use(cors({ 
+    origin: [
+        'http://localhost:5173', 
+        'http://localhost:5174', 
+        'https://weather-19l5ljkoh-emanuelszevaga7-9663s-projects.vercel.app/' 
+    ] 
+}))
+
 app.use(express.json())
 
 app.use('/api/auth', require('./routes/auth.routes'))
